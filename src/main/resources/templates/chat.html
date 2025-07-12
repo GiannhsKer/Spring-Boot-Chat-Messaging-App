@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
@@ -24,9 +24,8 @@ users:
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.4.0/sockjs.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
 <script type="text/javascript">
-console.log('[[${username}]]')
 var username = '[[${username}]]';
-console.log(username)
+console.log("username : " + username)
 var mysockjs = new SockJS("/stomp");
 var mystomp = Stomp.over(mysockjs);
 mystomp.connect({}, onConnect, onError);
